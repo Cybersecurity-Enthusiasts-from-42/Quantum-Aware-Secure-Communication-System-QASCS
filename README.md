@@ -15,12 +15,16 @@ This repo is designed to be:
 
 ## Quick start (Classical TLS demo)
 
-### 1) Create a venv + install deps
+### 1) Create a venv + install package
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-pip install -e .  # Install the qasccs package in editable mode
+pip install -e .  # Install the qasccs package in editable mode with dependencies
+```
+
+Or use the Makefile shortcut:
+```bash
+make install  # Installs package with dev dependencies (pytest)
 ```
 
 ### 2) Generate a self‑signed cert (dev only)
@@ -71,10 +75,29 @@ See: `docs/pqc-integration.md`
 
 ## Run tests
 ```bash
-# Make sure the package is installed first
-pip install -e .
+# Install package with dev dependencies first (includes pytest)
+pip install -e ".[dev]"
+# or: make install
+
+# Run tests
 pytest -q
 ```
+
+---
+
+## 📋 Project Management
+
+This repository uses **GitHub Projects** for project management and issue tracking. 
+
+### For Contributors
+- Check the [Project Board](https://github.com/orgito1015/Quantum-Aware-Secure-Communication-System-QASCS-/projects) to see current priorities
+- Read the [Contributing Guide](.github/CONTRIBUTING.md) before submitting PRs
+- Use [Issue Templates](.github/ISSUE_TEMPLATE/) when reporting bugs or requesting features
+- Review the [Project Roadmap](.github/ROADMAP.md) to see planned features
+
+### Getting Started with GitHub Projects
+- See [Project Setup Guide](.github/PROJECT_SETUP.md) for detailed instructions on creating and managing the project board
+- Review [Sample Issues](.github/SAMPLE_ISSUES.md) for examples of well-structured issues
 
 ---
 
